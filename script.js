@@ -35,6 +35,22 @@ searchModal.onclick = (e) => {
         searchModal.classList.remove("show");
     }
 };
+//map
+
+const baghdad = document.querySelector("#IQ-BG");
+
+if (baghdad) {
+    baghdad.addEventListener("click", () => {
+        window.location.hash = "baghdad";
+    });
+
+    baghdad.addEventListener("keydown", (event) => {
+        if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            window.location.hash = "baghdad";
+        }
+    });
+}
 
 const destinations = {
 

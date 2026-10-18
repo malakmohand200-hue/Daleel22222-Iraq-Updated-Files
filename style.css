@@ -235,6 +235,21 @@ button {
 .bars-of-sections{
         display: none;
     }
+.language-selector {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: transparent;
+    color: inherit;
+    font-size: 14px;
+    cursor: pointer;
+    outline: none;
+}
+
+.language-selector option {
+    background-color: white;
+    color: #222;
+}
 
 /* =========================
    HERO
