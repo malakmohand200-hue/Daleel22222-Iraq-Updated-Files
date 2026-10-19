@@ -15,7 +15,7 @@
 <header class="navbar">
   <a class="brand" href="#home" aria-label="Daleel Iraq home"><span class="brand-mark">د</span><span><strong>Daleel Iraq</strong><small>DISCOVER YOUR IRAQ</small></span></a>
   <nav class="nav-links" aria-label="Main navigation">
-    <a href="#explore">Explore</a><a href="#planner">Trip Planner</a><a href="#map-section">Map</a><a href="#culture">Culture</a>
+    <a href="#explore">Explore</a><a href="#weather">Weather</a><a href="#planner">Trip Planner</a><a href="#price-guide">Price Guide</a><a href="#map-section">Map</a><a href="#culture">Culture</a>
   </nav>
   <div class="nav-actions">
     <button class="icon-button" id="openSearch" aria-label="Search Daleel" title="Search">⌕</button>
@@ -41,6 +41,21 @@
     <div><strong>7,000+</strong><span>years of recorded history</span></div><i></i>
     <div><strong>18</strong><span>governorates to discover</span></div><i></i>
     <div><strong>One Iraq</strong><span>endless experiences</span></div>
+  </section>
+
+
+  <section class="section weather-section" id="weather" aria-labelledby="weatherTitle">
+    <div class="section-heading">
+      <div><span class="eyebrow">PLAN WITH THE WEATHER</span><h2 id="weatherTitle">Iraq, <em>right now.</em></h2></div>
+      <p>Live weather and a short forecast to help you plan your next destination. Data is retrieved online and may be unavailable without a connection.</p>
+    </div>
+    <div class="weather-panel">
+      <div class="weather-toolbar"><label for="weatherCity">Choose a city</label><select id="weatherCity"><option value="Baghdad">Baghdad</option><option value="Basra">Basra</option><option value="Erbil">Erbil</option><option value="Najaf">Najaf</option><option value="Karbala">Karbala</option><option value="Mosul">Mosul</option><option value="Sulaymaniyah">Sulaymaniyah</option><option value="Nasiriyah">Nasiriyah</option></select><button class="button button-primary" id="refreshWeather" type="button">Refresh weather ↻</button></div>
+      <p class="weather-status" id="weatherStatus" role="status" aria-live="polite">Choose a city or wait while live weather loads.</p>
+      <div id="weatherCurrent" class="weather-current" aria-live="polite"><div class="weather-placeholder">Live weather will appear here when data loads.</div></div>
+      <div class="weather-forecast-wrap"><h3>3-day forecast</h3><div id="weatherForecast" class="weather-forecast"><div class="weather-placeholder">Forecast loading…</div></div></div>
+      <p class="weather-attribution">Weather data: Open-Meteo. Forecast values and availability depend on the provider. Always check local conditions before travelling.</p>
+    </div>
   </section>
 
   <section class="section explore-section" id="explore">
@@ -86,6 +101,32 @@
     <div class="itinerary-shell" id="itineraryShell" hidden><div id="itineraryResult"></div></div>
   </section>
 
+
+  <section class="section price-section" id="price-guide" aria-labelledby="priceGuideTitle">
+    <div class="section-heading">
+      <div><span class="eyebrow">PLAN YOUR SPENDING</span><h2 id="priceGuideTitle">A practical <em>price guide.</em></h2></div>
+      <p>Indicative prices in Iraqi dinars (IQD) to help visitors estimate everyday services. Prices vary by city, season, provider and visitor category; confirm directly before paying.</p>
+    </div>
+    <div class="price-note"><span aria-hidden="true">ⓘ</span><p><strong>Planning reference, not a fixed tariff.</strong> Estimates are compiled from published visitor guides and general price listings checked in October 2026. Where official prices are not clearly published, treat the range as approximate and verify locally.</p></div>
+    <div class="price-toolbar"><label for="priceFilter">Show services</label><select id="priceFilter"><option value="all">All services</option><option value="food">Food & drinks</option><option value="transport">Transport</option><option value="stay">Accommodation</option><option value="entry">Attractions & entry</option><option value="connectivity">Mobile data</option></select><span class="price-currency">All prices in IQD</span></div>
+    <div class="price-grid" id="priceGrid">
+      <article class="price-card" data-price-category="food"><span class="price-icon">🍲</span><div><h3>Local meal</h3><p>Simple meal at an inexpensive restaurant</p></div><strong>3,000–13,000 <small>IQD / person</small></strong></article>
+      <article class="price-card" data-price-category="food"><span class="price-icon">🍽️</span><div><h3>Meal for two</h3><p>Three courses at a mid-range restaurant</p></div><strong>20,000–82,000 <small>IQD / two people</small></strong></article>
+      <article class="price-card" data-price-category="transport"><span class="price-icon">🚕</span><div><h3>Taxi ride</h3><p>Indicative starting fare; agree on the fare before departure if no meter is used</p></div><strong>2,000–5,000 <small>IQD / start</small></strong></article>
+      <article class="price-card" data-price-category="transport"><span class="price-icon">🚌</span><div><h3>Local public transport</h3><p>Short one-way trip; routes and fares differ by city</p></div><strong>500–1,000 <small>IQD / trip</small></strong></article>
+      <article class="price-card" data-price-category="stay"><span class="price-icon">🛏️</span><div><h3>Budget hotel</h3><p>Indicative double room per night; confirm amenities and taxes</p></div><strong>25,000–40,000 <small>IQD / night</small></strong></article>
+      <article class="price-card" data-price-category="stay"><span class="price-icon">🏨</span><div><h3>Mid-range hotel</h3><p>Prices vary considerably by city, dates and room type</p></div><strong>60,000–120,000 <small>IQD / night</small></strong></article>
+      <article class="price-card" data-price-category="entry"><span class="price-icon">🏛️</span><div><h3>Iraqi National Museum</h3><p>Published visitor information; check current opening status and eligibility</p></div><strong>3,000 / 25,000 <small>IQD · Iraqi / foreign adult</small></strong></article>
+      <article class="price-card" data-price-category="entry"><span class="price-icon">🏺</span><div><h3>Babylon archaeological site</h3><p>Reported ticket ranges differ between guides and visitor categories</p></div><strong>10,000–25,000 <small>IQD / person · verify at gate</small></strong></article>
+      <article class="price-card" data-price-category="connectivity"><span class="price-icon">📱</span><div><h3>Mobile data bundle</h3><p>Indicative tourist data package; allowance and validity differ by provider</p></div><strong>8,000–23,000 <small>IQD / package</small></strong></article>
+    </div>
+    <div class="price-estimator">
+      <div><span class="eyebrow">QUICK ESTIMATE</span><h3>Estimate a simple daily budget</h3><p>Adjust the number of days and travel style. This estimates food, local transport and accommodation only—not flights, intercity travel, tickets, shopping or emergencies.</p></div>
+      <div class="estimate-controls"><label for="budgetDays">Days</label><input id="budgetDays" type="number" min="1" max="30" value="1"><label for="budgetStyle">Travel style</label><select id="budgetStyle"><option value="budget">Budget</option><option value="mid">Mid-range</option></select><div class="estimate-result" id="budgetEstimate" aria-live="polite">Approx. 35,000–65,000 IQD per day</div></div>
+    </div>
+    <p class="section-footnote">Sources: <a href="https://visit-iraq.com/ar/places/baghdad-museum" target="_blank" rel="noopener">Visit Iraq — National Museum visitor information</a>, <a href="https://visit-iraq.com/en/places/babylon-ancient-site" target="_blank" rel="noopener">Visit Iraq — Babylon visitor guide</a>, and <a href="https://hikersbay.com/prices/iraq?lang=en" target="_blank" rel="noopener">HikersBay — Iraq price overview</a>. Sources may use different dates and methods; no listed estimate is a guarantee.</p>
+  </section>
+
   <section class="section map-section" id="map-section">
     <div class="section-heading"><div><span class="eyebrow">SEE WHERE IT TAKES YOU</span><h2>Iraq, on the <em>map.</em></h2></div><p>Explore destination markers and open a place card to learn more. Map tiles require an internet connection.</p></div>
     <div class="map-layout"><div id="iraqMap" role="application" aria-label="Interactive map of Iraq"></div><aside class="map-side"><span class="eyebrow">DESTINATION GUIDE</span><h3>Places with a story.</h3><p>Select a marker on the map or choose a destination below.</p><div id="mapPlaceList" class="map-place-list"></div><div class="map-note">Map data © OpenStreetMap contributors. Travel times and road conditions can change.</div></aside></div>
@@ -99,7 +140,7 @@
   <section class="section food-section" id="food-section">
     <div class="section-heading"><div><span class="eyebrow">MADE WITH IRAQI HOSPITALITY</span><h2>A taste of <em>Iraq.</em></h2></div><p>Explore beloved Iraqi dishes and discover local restaurants through verified listings as they become available.</p></div>
     <div class="food-grid" id="foodGrid"></div>
-    <p class="section-footnote">Dish imagery and descriptions are illustrative; restaurant availability, prices and menus must be confirmed directly with each venue.</p>
+    <p class="section-footnote">Food photos: <a href="https://commons.wikimedia.org/wiki/File:Masgouf.jpg" target="_blank" rel="noopener">Masgouf</a> · <a href="https://commons.wikimedia.org/wiki/File:Iraqi_Dolma.jpg" target="_blank" rel="noopener">Dolma</a> · <a href="https://commons.wikimedia.org/wiki/File:Iraqi_Quzi.jpg" target="_blank" rel="noopener">Quzi</a> · <a href="https://commons.wikimedia.org/wiki/File:Iraqi_Dates_Kleicha.jpg" target="_blank" rel="noopener">Kleicha</a>. Image creators and licence details are listed in IMAGE_SOURCES_REVIEW.md. Restaurant availability, prices and menus must be confirmed directly with each venue.</p>
   </section>
 
   <section class="review-section">
@@ -110,7 +151,7 @@
   <section class="closing-cta"><span class="eyebrow">YOUR NEXT CHAPTER IS HERE</span><h2>Come for the history.<br><em>Stay for the stories.</em></h2><a class="button button-primary" href="#planner">Start exploring <span>↗</span></a></section>
 </main>
 
-<footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">د</span><span><strong>Daleel Iraq</strong><small>DISCOVER YOUR IRAQ</small></span></a><p>Made to celebrate Iraq’s places, people and stories.</p><div><a href="#explore">Explore</a><a href="#planner">Plan a trip</a><a href="#map-section">Map</a></div><small>© 2026 Daleel Iraq · A tourism discovery prototype</small></footer>
+<footer class="footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">د</span><span><strong>Daleel Iraq</strong><small>DISCOVER YOUR IRAQ</small></span></a><p>Made to celebrate Iraq’s places, people and stories.</p><div><a href="#explore">Explore</a><a href="#weather">Weather</a><a href="#planner">Plan a trip</a><a href="#price-guide">Price guide</a><a href="#map-section">Map</a></div><small>© 2026 Daleel Iraq · A tourism discovery prototype</small></footer>
 
 <!-- Search modal -->
 <div class="search-overlay" id="searchOverlay" aria-hidden="true">
