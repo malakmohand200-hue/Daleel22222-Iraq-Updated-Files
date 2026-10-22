@@ -1,0 +1,1 @@
+Daleel Iraq image folder. The current build uses distinct Wikimedia Commons image URLs for food and some landmarks because image binaries could not be downloaded into this build environment. See IMAGE_SOURCES_REVIEW.md for source and licence records. Do not assume all imagery is local/offline-ready; test all image links before deployment.
